@@ -8,9 +8,11 @@ for caracter in frase:
         if 'a' <= caracter <= 'z':  
             inicio = ord('a')
             limite = ord('z')
+        elif 'A' <= caracter <= 'Z':
+            inicio = ord('A')
+            limite = ord('Z')
 
         valor_ascii += desplazamiento
-
         if valor_ascii > limite:  
             valor_ascii -= 26  
 
