@@ -30,3 +30,9 @@ class Patch:
         celda.estado = 1 if colonia == 'A' else 2
         celda.nido = colonia  # Asociar el nido a la celda
         self.nidos[colonia] = Nido(colonia, (x, y))  # Almacenar el nido en el diccionario de nidos
+
+    def obtener_nido(self, colonia):
+        return self.nidos.get(colonia)
+
+    def obtener_posicion_nido(self, colonia):
+        return self.nidos[colonia].posicion if colonia in self.nidos else None
