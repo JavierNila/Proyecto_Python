@@ -22,3 +22,9 @@ class Patch:
                 celda.estado = 0  # Cambiar estado a flor
                 celda.energia = energia_flor  # Asignar la energía de la flor
 
+
+    def colocar_nido(self, x, y, colonia):
+        celda = self.ambiente[y][x]
+        celda.estado = 1 if colonia == 'A' else 2
+        celda.nido = colonia
+        self.nidos[colonia] = Nido(colonia, (x, y))
