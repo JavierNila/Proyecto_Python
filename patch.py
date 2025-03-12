@@ -38,3 +38,25 @@ class Patch:
     # Método para obtener la posición del nido de una colonia
     def obtener_posicion_nido(self, colonia):
         return self.nidos[colonia].posicion if colonia in self.nidos else None
+
+    # Método para mostrar el estado actual del entorno
+    def mostrar_estado(self, hormigas):
+        # Genera una matriz visual del entorno, inicialmente llena de puntos que representan espacios vacíos
+        matriz = [["." for _ in range(self.ancho)] for _ in range(self.alto)]
+
+        # Recorre todas las celdas del entorno para asignar los símbolos correspondientes
+        for fila in range(self.alto):
+            for columna in range(self.ancho):
+                celda = self.ambiente[fila][columna]
+                if celda.estado == 0:
+                    matriz[fila][columna] = "F"  # "F" representa una flor
+                elif celda.estado == 1:
+                    matriz[fila][columna] = "A"  # "A" representa un nido de la colonia A
+                elif celda.estado == 2:
+                    matriz[fila][columna] = "B"  # "B" representa un nido de la colonia B
+
+        # Imprime cada fila de la matriz como una línea de texto 
+        for fila in matriz:
+            print(" ".join(fila))
+        print("\n")
+
