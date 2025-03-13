@@ -42,3 +42,6 @@ class Hormiga:
         elif y > nido_y:
             y -= 1
         self.posicion = (x, y)
+        if (x, y) == (nido_x, nido_y):
+            self.patch.obtener_nido(self.colonia).almacenar_comida(1)
+            self.tiene_comida = False
