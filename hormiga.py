@@ -9,3 +9,10 @@ class Hormiga:
         self.viva = True
         self.posicion = patch.obtener_posicion_nido(colonia)
         self.patch = patch
+
+    def buscar_comida(self):
+        if not self.viva:
+            return
+        x, y = self.posicion
+        dx, dy = random.choice([(0, 1), (1, 0), (0, -1), (-1, 0)])
+        nueva_x, nueva_y = x + dx, y + dy
