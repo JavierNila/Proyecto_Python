@@ -27,3 +27,9 @@ class Hormiga:
         self.energia -= 1
         if self.energia <= 0:
             self.viva = False
+
+    def regresar_al_nido(self):
+        if not self.viva or not self.tiene_comida:
+            return
+        x, y = self.posicion
+        nido_x, nido_y = self.patch.obtener_posicion_nido(self.colonia)
