@@ -33,3 +33,12 @@ class Hormiga:
             return
         x, y = self.posicion
         nido_x, nido_y = self.patch.obtener_posicion_nido(self.colonia)
+        if x < nido_x:
+            x += 1
+        elif x > nido_x:
+            x -= 1
+        if y < nido_y:
+            y += 1
+        elif y > nido_y:
+            y -= 1
+        self.posicion = (x, y)
