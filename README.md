@@ -6,8 +6,8 @@ Se busca diseñar e implementar una simulacion de colonias de hormigas, el propo
 ## Funcionalidad 
 - **Generacion del entorno**: Se crea una cuadricula donde se distribuyen flores como fuente de alimento y nidos para cada colonia.
 - **Visualizacion del entorno**: Se representa el estado actual del ambiente, mostrando la ubicacion de los nidos, flores y hormigas
-- **Movimiento de las hormigas**:
-- **Gestion de energia**:
+- **Movimiento de las hormigas**: Las hormigas salen de su nido, buscan comida y la transportan de vuelta.
+- **Gestion de energia**: Cada hormiga tiene una cantidad de energia limitada, la cual disminuye con cada movimiento.
 
 ## Interaccion del Usuario
 El usuario no interactua directamente con la simulacion, ya que esta corre de manera automatica. Sin embargo, puede modificar parametros en el codigo (main.py) como:
