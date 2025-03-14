@@ -55,6 +55,14 @@ class Patch:
                 elif celda.estado == 2:
                     matriz[fila][columna] = "B"  # "B" representa un nido de la colonia B
 
+        # Recorre la lista de hormigas para actualizar su posición
+        for hormiga in hormigas:
+            if hormiga.viva: # Verifica si la hormiga sigue viva
+                x, y = hormiga.posicion # Obtiene la posición actual
+
+                # Representa la hormiga en la matriz con "*" si pertenece a la colonia A, o con "#" si pertenece a la colonia B
+                matriz[y][x] = "*" if hormiga.colonia == "A" else "#" 
+
         # Imprime cada fila de la matriz como una línea de texto 
         for fila in matriz:
             print(" ".join(fila))
